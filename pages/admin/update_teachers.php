@@ -1,0 +1,57 @@
+<?php
+include '../connect/connect_db.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST['id'];
+    $namep = $_POST['namep'];
+    $descriptionp = $_POST['descriptionp'];
+    $currentimage = $_POST['currentimage']; // Текущее имя файла
+
+    // Проверяем, загружен ли новый файл
+    if (!empty($_FILES['teachersimg']['name'])) {
+        $target_dir = "../../img/teachers/";
+        $target_file = $target_dir . basename($_FILES["teachersimg"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        // Проверка, является ли файл изображением
+$uploadOk = 1; // Предполагаем, что загрузка прошла успешно по умолчанию
+
+// Проверка размера файла
+if ($_FILES["teachersimg"]["size"] > 5000000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+
+// Разрешенные форматы файлов
+$imageFileType = strtolower(pathinfo($_FILES["teachersimg"]["name"], PATHINFO_EXTENSION));
+if (!in_array($imageFileType, ['jpg', 'jpeg', 'png', 'gif', 'svg'])) {
+    echo "Sorry, only JPG, JPEG, PNG, GIF, and SVG files are allowed.";
+    $uploadOk = 0;
+}
+
+// Проверка, был ли файл загружен без ошибок
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+} else {
+    if (move_uploaded_file($_FILES["teachersimg"]["tmp_name"], $target_file)) {
+        $directionsimg = basename($_FILES["teachersimg"]["name"]);
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+
+// Обновление записи в базе данных
+$sql = "UPDATE section_teachers SET nameP='$namep', descriptionP='$descriptionp', teachersImg='$directionsimg' WHERE idt=$id";
+if ($conn->query($sql) === TRUE) {
+    header("Location: admin_panel.php");
+    exit();
+} else {
+    echo "Error updating record: " . $conn->error;
+}
+
+    
+} }
+
+$conn->close();
+?>
