@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*Общие стили*/
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  font-size: 20px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #fff;
+}
+
+.container,
+.container-fluid {
+  max-width: 1180px;
+}
+
+.main-title {
+  margin-bottom: 30px;
+  font-size: 80px;
+  line-height: 1;
+  letter-spacing: 4;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+}
+
+.main-p {
+  margin-bottom: 100px;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 4;
+  font-weight: 300;
+}
+
+.title {
+  text-align: center;
+  padding: 30px;
+  font-weight: 700;
+  letter-spacing: 3;
+  font-size: 64px;
+}
+
+.section-p {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 3;
+  padding: 15px;
+}
+
+.icon-p {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 3;
+}
+
+.flex-container {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+/*анимация*/
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*Стили header*/
+
+#head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar-brand img {
+  width: 10vh;
+  height: 10vh;
+}
+
+.user-icon {
+  width: 25px;
+}
+
+/* Стили для модального окна */
+
+#applicationFormModal .modal-content {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 30px;
+  text-align: center;
+  font-size: 25px;
+}
+#applicationFormModal .form-label {
+  color: #fff;
+}
+#applicationFormModal .form-control {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 20px;
+}
+#applicationFormModal .btn-primary {
+  background-color: #f83905;
+  border: none;
+  color: #fff;
+  padding: 20px 30px;
+  font-size: 20px;
+  letter-spacing: 2;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+#applicationFormModal .btn-primary:hover {
+  background-color: #df3000;
+}
+
+/* Стили для центрирования и удаления рамок */
+#applicationFormModal .modal-header {
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#applicationFormModal .modal-footer {
+  border-top: none;
+  justify-content: center;
+}
+/* Стили для позиции окна */
+#applicationFormModal.modal.show .modal-dialog {
+  transform: translate(0, 50%);
+}
+
+/*Стили main*/
+.welcome {
+  min-height: 800px;
+  height: 100vh;
+  padding: 195px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+
+  background-size: cover;
+  background-position: bottom;
+  background-color: #f83905;
+}
+
+.welcome-links > * + * {
+  margin-left: 50px;
+}
+
+.welcome-links__app {
+  background-color: #f83905;
+  transition: background-color 0.2s;
+  border: none;
+  display: inline-block;
+  padding: 20px 30px;
+  font-size: 20px;
+  letter-spacing: 2;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.welcome-links__app:hover {
+  background-color: #df3000;
+}
+
+.welcome-links__contact {
+  display: inline-block;
+  transition: background-color 0.2s;
+  padding: 18px 35px;
+  font-size: 20px;
+  letter-spacing: 2;
+  text-transform: uppercase;
+  border: 2px solid #f83905;
+  border-radius: 4px;
+}
+
+.welcome-links__contact:hover {
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+/*стили footer*/
+.nav-icon {
+  width: 40px;
+}
+
+.nav-icon > * + * {
+  margin-left: 15px;
+}
+
+/*стили directions*/
+
+.directions {
+  background-color: #f83905;
+}
+
+.directions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  grid-gap: 20px; /* Расстояние между иконками */
+  justify-content: center; /* Центрирование по горизонтали */
+}
+
+.directions-item {
+  text-align: center; /* Центрирование текста под иконкой */
+  padding: 50px;
+}
+
+.directions-item_links {
+  /* Добавляем стили для центрирования */
+  display: flex;
+  flex-direction: column; /* Располагаем элементы вертикально */
+  align-items: center; /* Центрируем по горизонтали */
+}
+
+.directions-item_links_img {
+  width: 100px; /* Установите нужную ширину */
+  height: 100px; /* Установите нужную высоту */
+  object-fit: contain; /* Сохраняет соотношение сторон */
+  border-radius: 50%; /* Создает круглый фон */
+  background-color: white; /* Устанавливает белый фон */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Центрирует иконку внутри круга */
+  margin: 36px;
+}
+
+.directions-item_links_img img {
+  width: 60%; /* Регулируйте размер иконки */
+  height: auto; /* Высота устанавливается автоматически */
+  object-fit: contain;
+}
+
+/*стили contacts*/
+
+.contacts-flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.contacts-p {
+  color: #fff;
+}
+
+.map {
+  width: 700px;
+  height: 500px;
+  background-color: #fff;
+}
+
+/*стили about us faq*/
+
+/*about_us*/
+
+.about_us-flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.about_us-info {
+  /* Добавляем стили для обоих блоков */
+  flex: 1; /* Каждый блок занимает половину доступного пространства */
+  display: flex; /* Делаем .about_us-info flex-контейнером */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+}
+
+.about_us-p {
+  color: #fff;
+  letter-spacing: 4;
+  line-height: 2;
+}
+
+.about_us-title {
+  margin-right: 0; /* Убираем ненужный margin */
+}
+
+/*faq*/
+
+.faq {
+  background-color: #f83905;
+}
+
+.faq-flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центрирует содержимое по вертикали */
+  align-items: center; /* Центрирует содержимое по горизонтали */
+}
+
+.faq-p {
+  color: #fff;
+  letter-spacing: 4;
+  line-height: 2;
+  margin-top: 0; /* Убираем верхний отступ у faq-p */
+}
+
+.faq_tit-p {
+  font-weight: 500;
+  padding-top: 25px;
+  color: #fff;
+  margin-top: 15px;
+  margin-bottom: 15px; /*  Устанавливаем нижний отступ у faq_tit-p  */
+}
+
+.faq-title {
+  margin-right: 0;
+}
+
+/*concerts*/
+.carousel-container {
+  width: 100%; /* Ширина слайдера (можно изменить) */
+  height: 25%;
+  margin: 0 auto; /* Центрирование по горизонтали */
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto; /* Высота картинки будет подстраиваться под ширину */
+}
+
+.login-form__form {
+  display: flex;
+  flex-direction: column; /* располагаем элементы друг под другом */
+  gap: 20px; /* расстояние между полями */
+}
+
+.form-input {
+  padding: 15px;
+  border: 2px solid black; /* черная обводка */
+  background-color: white; /* белый фон */
+  border-radius: 5px; /* скругленные углы */
+}
+
+.form-input::placeholder {
+  color: gray; /* серый плейсхолдер */
+}
+
+.form-buttom {
+  padding: 15px;
+  border: none;
+  background-color: #555; /* цвет кнопки */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

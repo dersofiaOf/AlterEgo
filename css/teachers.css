@@ -1,0 +1,49 @@
+/*teachers*/
+
+.teachers-title {
+    color: #fff;
+  }
+  
+  .teachers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.teachers-item {
+    flex: 1 1 30%;
+    max-width: 30%;
+}
+
+  
+  .teachers-item_links {
+    /* Добавляем стили для центрирования */
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center; /* Центрируем по горизонтали */
+  }
+  
+  .teachers-item_links_img {
+    width: 400px; /* Установите нужную ширину */
+    height: 400px; /* Установите нужную высоту */
+    object-fit: contain; /* Сохраняет соотношение сторон */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Центрирует иконку внутри круга */
+    margin: 28px;
+    transition: transform 0.3s ease; /* Добавляем плавный переход */
+  }
+  
+  .teachers-item_links_img:hover {
+    transform: scale(1.1); /* Увеличиваем размер при наведении */
+  }
+  
+  .teachers-item_links_img img {
+    width: 100%; /* Регулируйте размер иконки */
+    height: auto; /* Высота устанавливается автоматически */
+    object-fit: contain;
+  }
+  
+  .icon-p {
+    color: #fff;
+  }

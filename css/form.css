@@ -1,0 +1,53 @@
+.form-flex-container {
+    margin-top: 200px;
+  margin-bottom: 100px;
+}
+.login-form__form {
+    display: flex;
+    flex-direction: column;  /* располагаем элементы друг под другом */
+    gap: 20px;  /* расстояние между полями */
+  }
+  
+  .form-input {
+    padding: 15px;
+    border: 1px solid #fff;
+    background-color: #000;
+    border-radius: 5px; /* скругленные углы */
+    color: #fff;
+  }
+  
+  .form-input::placeholder {
+    color: gray; /* серый плейсхолдер */
+  }
+  
+  .form-buttom {
+    padding: 15px;
+    border: none; 
+    background-color: #f83905; /* цвет кнопки */
+    color: white; 
+    border-radius: 5px;
+  }
+
+  .label-p {
+    color: #fff;
+  }
+
+  .bold_label-p {
+    color: #f83905;
+  }
+
+  .no_acc > p {
+    text-align: center;
+  }
+
+  .form-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .form-input, 
+  .form-buttom {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 300px; 
+  }

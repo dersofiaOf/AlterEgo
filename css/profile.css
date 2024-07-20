@@ -1,0 +1,38 @@
+.flex-container {
+    margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.icon-p {
+    color: #fff;
+  }
+
+  .custom-card {
+    background-color: black !important;
+    border: 1px solid white !important;
+  }
+  
+  .custom-card .card-body {
+    padding: 20px; /* Можно изменить по вкусу */
+  }
+
+  .card-title, .card-text, .profile-title, .title {
+    color: #fff !important;
+  }
+
+  .change-form {
+    display: flex;
+    flex-direction: center;
+    align-items: center; 
+    justify-content: center;
+  }
+
+  /* Стили для элементов формы */
+.arend-form__form p {
+  margin-bottom: 10px; /* Отступ снизу для текста "Статус" */
+}
+
+.arend-form__form select {
+  padding: 10px;
+  margin-bottom: 20px; /* Отступ снизу для выпадающего списка */
+}
